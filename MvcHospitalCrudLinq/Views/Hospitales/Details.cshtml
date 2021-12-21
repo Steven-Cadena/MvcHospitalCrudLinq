@@ -1,0 +1,15 @@
+﻿@model Hospital
+
+<a class="btn btn-danger"
+   asp-controller="Hospitales"
+   asp-action="Index">
+    Volver al listado
+</a>
+
+<h1 style="color:blue">Detalles del Hospital</h1>
+
+<h1>Hospital Cod:@Model.HospitalCod</h1>
+<h1>Nombre:@Model.Nombre</h1>
+<h1>Direccion:@Model.Direccion</h1>
+<h1>Telefono:@Model.Telefono</h1>
+<h1>Num Cama:@Model.NumCama</h1>

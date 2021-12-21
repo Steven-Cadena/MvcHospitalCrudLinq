@@ -1,0 +1,27 @@
+﻿
+@*indicamos que vamos a recibir por viewbag una lista de tipo string*@
+@{
+    Hospital hospital = ViewBag.Hospital as Hospital;
+}
+<a class="btn btn-danger"
+   asp-controller="Hospitales"
+   asp-action="Index">
+    Volver al listado
+</a>
+<h1 style="color:red">Modificar Hospital</h1>
+<form method="post">
+    <input type="hidden" name="hospitalCod" value="@hospital.HospitalCod" />
+    <label>Nombre Hospital:</label>
+    <input type="text" name="nombre" value="@hospital.Nombre" /><br />
+    <label>Direccion:</label>
+    <input type="text" name="direccion" value="@hospital.Direccion" /><br />
+    <label>Telefono:</label>
+    <input type="text" name="telefono" value="@hospital.Telefono" /><br />
+    <label>Num Camas:</label>
+    <input type="text" name="numCama" value="@hospital.NumCama" /><br /><br />
+    <button type="submit" class="btn btn-info">
+        Modificar
+    </button>
+</form>
+
+<h1>@ViewData["MENSAJE"]</h1>
