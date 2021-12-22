@@ -1,11 +1,11 @@
 ﻿@model List<Hospital>
 
-<h1 style="color:blue">Hospitales Totales</h1>
+<h1 style="color:blue">Hospitales Totales</h1><br />
 <a class="btn btn-warning"
    asp-controller="Hospitales"
    asp-action="Insertar">
     Nuevo Hospital
-</a><br/>
+</a><br/><br /><br />
 <table class="table table-dark">
     <thead>
         <tr>
@@ -17,6 +17,7 @@
             <th>Detalles</th>
             <th>Editar</th>
             <th>Eliminar</th>
+            <th>Plantilla</th>
         </tr>
     </thead>
     <tbody>
@@ -50,6 +51,14 @@
                        asp-action="Delete"
                        asp-route-hospitalCod="@hospital.HospitalCod">
                         Eliminar
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-warning"
+                       asp-controller="Plantillas"
+                       asp-action="PlantillaHospital"
+                       asp-route-idhospital="@hospital.HospitalCod">
+                        Plantilla
                     </a>
                 </td>
             </tr>
