@@ -70,15 +70,22 @@ namespace MvcHospitalCrudLinq.Data
             var consulta = from datos in this.tablahospital.AsEnumerable()
                            where datos.Field<int>("HOSPITAL_COD") == idhospital
                            select datos;
-            Hospital hospital = new Hospital();
-            //metodo para recuperar el primer elemento
-            var row = consulta.First();
-            hospital.HospitalCod = row.Field<int>("HOSPITAL_COD");
-            hospital.Nombre = row.Field<string>("NOMBRE");
-            hospital.Direccion = row.Field<string>("DIRECCION");
-            hospital.Telefono = row.Field<string>("TELEFONO");
-            hospital.NumCama = row.Field<int>("NUM_CAMA");
-            return hospital;
+            if (consulta.Count() == 0)
+            {
+                return null;
+            }
+            else 
+            {
+                Hospital hospital = new Hospital();
+                //metodo para recuperar el primer elemento
+                var row = consulta.First();
+                hospital.HospitalCod = row.Field<int>("HOSPITAL_COD");
+                hospital.Nombre = row.Field<string>("NOMBRE");
+                hospital.Direccion = row.Field<string>("DIRECCION");
+                hospital.Telefono = row.Field<string>("TELEFONO");
+                hospital.NumCama = row.Field<int>("NUM_CAMA");
+                return hospital;
+            }
         }
         //metodo para modificar Hospital 
         public int ModificarHospital(int hospitalCod, string nombre, string direccion, string telefono, int numCama) 

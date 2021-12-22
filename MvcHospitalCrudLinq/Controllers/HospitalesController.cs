@@ -23,6 +23,7 @@ namespace MvcHospitalCrudLinq.Controllers
         }
         public IActionResult Details(int idhospital) 
         {
+
             Hospital hospital = this.context.FindHospital(idhospital);
             return View(hospital);
         }
