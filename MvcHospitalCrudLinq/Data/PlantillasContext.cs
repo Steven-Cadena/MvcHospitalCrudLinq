@@ -16,7 +16,7 @@ namespace MvcHospitalCrudLinq.Data
 
         public PlantillasContext() 
         {
-            string cadenaconexion = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;Persist Security Info=True;User ID=SA;Password=MCSD2021";
+            string cadenaconexion = @"Data Source=sqltajamar94.database.windows.net;Initial Catalog=AZURESTEVEN;Persist Security Info=True;User ID=adminsql;Password=Admin123";
             string sql = "select * from plantilla";
             this.adplantilla = new SqlDataAdapter(sql, cadenaconexion);
             this.TablaPlantilla = new DataTable();
